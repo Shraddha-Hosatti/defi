@@ -42,7 +42,7 @@ config.logs = {}
 config.logs.consoleLogs = true
 config.logs.fileLogs = false
 config.logs.api = {}
-config.logs.api.path = "/var/log/hirewheels/"
+config.logs.api.path = "/var/log/defi/"
 config.logs.api.category = "API"
 /**********************Logging***********************/
 
