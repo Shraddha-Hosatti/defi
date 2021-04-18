@@ -6,6 +6,8 @@ const userErrors = require("../constants/errors").userErrors
 const apiLogger = require("./logging").apiLogger
 const crypto = require("crypto")
 
+const waitFor = (ms) => new Promise(r => setTimeout(r, ms));
+
 async function successResponse(data, statusCode = 200) {
 
   let response = {}
@@ -59,9 +61,34 @@ async function asyncForEach(array, callback) {
   }
 }
 
+function range(start, stop, step) {
+  if (typeof stop == 'undefined') {
+    // one param defined
+    stop = start;
+    start = 0;
+  }
+
+  if (typeof step == 'undefined') {
+    step = 1;
+  }
+
+  if ((step > 0 && start >= stop) || (step < 0 && start <= stop)) {
+    return [];
+  }
+
+  var result = [];
+  for (var i = start; step > 0 ? i < stop : i > stop; i += step) {
+    result.push(i);
+  }
+
+  return result;
+}
+
 module.exports = {
   handleErrorResponse,
   asyncForEach,
   errorResponse,
-  successResponse
+  successResponse,
+  range,
+  waitFor
 }

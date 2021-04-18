@@ -1,0 +1,81 @@
+'use strict';
+
+const config = require("../config/config")
+const util = require("../tools/util")
+const Web3 = require("web3")
+const web3 = new Web3(new Web3.providers.HttpProvider(config.blockchain.url))
+const p2pPlatform = require("../blockchain/smartContract/P2PPlatform").p2pPlatform
+
+// Global (Must be saved in DB - Mongo or Redis)
+var crawledBlocks = 0
+
+async function ETHBlockCrawler() {
+
+    try {
+
+        // RPC - Get Current Block
+        var currentBlock = await web3.eth.getBlockNumber()
+        console.log("currentBlock : " + currentBlock)
+        console.log("crawledBlocks : " + crawledBlocks)
+
+        // Iterate Over Blocks
+        var blockRange = util.range(Number(crawledBlocks) + 1, currentBlock + 1, 1)
+
+        const iterateBlockNumber = async () => {
+            await util.asyncForEach(blockRange, async (blockNumber) => {
+
+                console.log("Crawling Block : " + blockNumber)
+
+                // Get Transactions
+                let transactionsObj = await web3.eth.getBlock(blockNumber, true)
+                let listTransactionsObj = transactionsObj.transactions
+               
+                // Iterate Over Transaction
+                const iterateNewTransactions = async () => {
+                await util.asyncForEach(listTransactionsObj, async (transactionObj) => {
+                        
+                        // Print Transaction
+                        console.log(transactionObj)
+
+                        // To capture our smart contract tx
+                        // transactionObj["to"] == config.smartContractAddress.p2pPlatform
+
+                        // Decode Transaction
+                        // const abiDecoder = require('abi-decoder');
+                        // var contractObj = await p2pPlatform()
+                        // abiDecoder.addABI(contractObj.abi)
+                        // var decodedData = abiDecoder.decodeMethod(transactionObj['input']);
+
+                    });
+                }
+                await iterateNewTransactions()
+                
+                // Set Crawled Blocks
+                crawledBlocks = blockNumber
+
+            });
+        }
+        await iterateBlockNumber()
+
+
+    } catch (error) {
+        console.error("Block : " + error)
+    }
+
+
+}
+
+async function main() {
+
+    while (true) {
+
+        // Start
+        await ETHBlockCrawler()
+
+        // Wait Ethereum Block Time
+        await util.waitFor(15000)
+
+    }
+}
+
+main()

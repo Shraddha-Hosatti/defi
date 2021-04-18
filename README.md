@@ -119,6 +119,18 @@ npm install
 ```sh
 npm run start
 ```
+
+# Services
+
+## Block Crawler (Sample)
+
+To capture all blockchain transaction
+
+```sh
+cd api
+node script/blockCrawler.js
+```
+
 # Troubleshoot
 ## Failed at the scrypt@6.0.3 install script.
 
