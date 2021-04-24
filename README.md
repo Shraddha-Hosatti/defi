@@ -64,7 +64,22 @@ truffle compile
 npm run migrate:dev
 ```
 
-### Update Smart Contract address in config (get this from the ganache gui)
+### Create Test Cases
+
+**Important** : Run this only if you want to create new test cases. 
+
+Example :
+```
+truffle create test AskRequest
+```
+
+### Run Test
+
+```sh
+npm run test
+```
+
+### Update Smart Contract address in config (get this from the ganache gui or console output)
 
 config.smartContractAddress.p2pToken
 
@@ -159,7 +174,7 @@ oz compile
 ```
 ## Deploy Contract
 
-*Important* : Delete .openzeppelin/dev-* file before starting from scratch.
+**Important** : Delete .openzeppelin/dev-* file before starting from scratch.
 
 ```
 oz create
