@@ -131,7 +131,55 @@ cd api
 node script/blockCrawler.js
 ```
 
+# Upgradable Smart Contract Demo
+
+Move to upgradable_smart_contract_demo folder.
+
+## Install Open Zepplelin Cli
+
+```
+npm install -g @openzeppelin/cli
+oz --version
+```
+
+## Initialize Openzeppelin Env (one time only)
+
+This is already done in project. However if you want to do it from scratch run below commands :
+
+```
+npm init -y
+oz init
+npm install @openzeppelin/upgrades --save
+```
+
+## Compile Contract
+
+```
+oz compile
+```
+## Deploy Contract
+
+```
+oz create
+```
+
+## Interact with Contract
+
+```
+oz call
+oz send-tx
+```
+
+## Upgrade Contract
+
+Change some code and run below
+
+```
+oz upgrade
+```
+
 # Troubleshoot
+
 ## Failed at the scrypt@6.0.3 install script.
 
 ```sh
