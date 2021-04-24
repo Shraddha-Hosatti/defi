@@ -11,7 +11,7 @@ contract("P2PPlatform", accounts => {
         _p2pPlatform = await P2PPlatform.new(_requestFactory.address)
         _p2pToken = await P2PToken.new(10000000, "P2PToken", 0, "P2PT")
         _colletralTimeStamp = 123
-        _colletral = 0 // Make this 0 to fail test case
+        _colletral = 2000000000 // Make this 0 to fail test case
     });
 
     it("Ask", async () => {
