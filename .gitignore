@@ -1,3 +1,4 @@
+upgradable_smart_contract_demo/.openzeppelin/dev-*
 node_modules
 .idea/*
 .vscode/settings.json

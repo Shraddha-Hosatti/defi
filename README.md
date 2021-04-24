@@ -159,6 +159,8 @@ oz compile
 ```
 ## Deploy Contract
 
+*Important* : Delete .openzeppelin/dev-* file before starting from scratch.
+
 ```
 oz create
 ```
