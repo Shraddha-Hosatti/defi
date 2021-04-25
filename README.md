@@ -34,6 +34,7 @@ npm install truffle -g
 ```
 
 ## Installation
+
 ### Clone the repo
 
 ```sh
@@ -89,6 +90,13 @@ config.smartContractAddress.p2pPlatform
 
 ```sh
 npm install
+```
+
+### Create Log folder
+
+```
+sudo mkdir -p /var/log/defi/
+sudo chmod 777 -R /var/log/defi
 ```
 
 ### Start backend

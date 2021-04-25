@@ -3,7 +3,10 @@
 const p2pPlatformUtil = require("../blockchain/smartContract/P2PPlatform")
 const p2pTokenUtil = require("../blockchain/smartContract/P2PToken")
 const ethereumUtil = require("../blockchain/util")
+const config = require("../config/config")
 const Web3 = require("web3")
+const web3 = new Web3(new Web3.providers.HttpProvider(config.blockchain.url))
+const util = require("../tools/util")
 
 async function ask(from, amount, privateKey, paybackAmount, purpose, collateral, collateralCollectionTimeStamp){
 
@@ -181,11 +184,50 @@ async function collect(from, privateKey, requestAddress){
 
 }
 
+async function askBatch(from, privateKey, transactionData){
+
+    try {
+
+        // Reference
+        let response = []
+        let txDetails
+        let nonce
+
+        // Get Nonce
+        nonce = await web3.eth.getTransactionCount(from)
+
+        // Iterate Over Transaction
+        const iterateNewTransactions = async () => {
+        await util.asyncForEach(transactionData, async (tx) => {
+                
+                 // Get Data
+                txDetails = await p2pPlatformUtil.ask(from, tx.amount, privateKey, tx.paybackAmount, tx.purpose, tx.collateral, tx.collateralCollectionTimeStamp, nonce)
+                response.push(txDetails)
+
+                // Increment Nonce 
+                nonce = nonce + 1
+                
+            });
+        }
+        await iterateNewTransactions()
+        
+       
+
+        return response
+
+    } catch (error) {
+        throw error
+    }
+
+}
+
+
 module.exports = {
     ask,
     request,
     cancel,
     lend,
     payback,
-    collect
+    collect,
+    askBatch
 }

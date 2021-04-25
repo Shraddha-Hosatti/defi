@@ -189,7 +189,40 @@ async function collect(req, res){
 
 }
 
+// HINT (Session 3) Do batch transaction via api from a single address with proper nonce
+async function askBatch(req, res){
+
+    try{
+
+        // Reference
+        let transactionData
+        let from
+        let privateKey
+        let response
+
+        // Get Data
+        transactionData = req.body.transactionData
+        privateKey = req.body.privateKey
+        from = req.body.from
+
+        // Get Data
+        response = await p2pPlatformController.askBatch(from, privateKey, transactionData)
+
+        // Create Response
+        response = await util.successResponse(response)
+
+        // Send Response
+        res.status(200).send(response)
+
+    }
+    catch(exception){
+        await util.handleErrorResponse(exception, res)
+    }
+
+}
+
 module.exports = {
+    askBatch,
     ask,
     request,
     cancel,

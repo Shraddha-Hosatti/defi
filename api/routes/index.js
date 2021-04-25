@@ -21,6 +21,7 @@ router.post("/v1/p2pToken/approve", p2pToken.approve)
 
 // P2P Platform
 router.post("/v1/p2pPlatform/ask", p2pPlatform.ask)
+router.post("/v1/p2pPlatform/askBatch", p2pPlatform.askBatch)
 router.get("/v1/p2pPlatform/request", p2pPlatform.request)
 router.post("/v1/p2pPlatform/cancel", p2pPlatform.cancel)
 router.post("/v1/p2pPlatform/lend", p2pPlatform.lend)

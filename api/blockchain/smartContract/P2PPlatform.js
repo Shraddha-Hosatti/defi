@@ -38,7 +38,7 @@ async function signTransaction(rawTxObject, privateKey) {
 
 }
 
-async function ask(from, amount, privateKey, paybackAmount, purpose, collateral, collateralCollectionTimeStamp) {
+async function ask(from, amount, privateKey, paybackAmount, purpose, collateral, collateralCollectionTimeStamp, nonce) {
 
     try {
 
@@ -54,12 +54,18 @@ async function ask(from, amount, privateKey, paybackAmount, purpose, collateral,
         paybackAmount = await p2pToken.rawValue(paybackAmount)
         paybackAmount = web3.utils.toHex(paybackAmount)
 
-        let nonce = await web3.eth.getTransactionCount(from)
+        // Manage Nonce
+        if (nonce == null){
+            nonce = await web3.eth.getTransactionCount(from)
+        }
         nonce = web3.utils.toHex(nonce)
-
+    
+        
+        // Get Gas Price
         let gasPrice = await ethereumUtil.getGasPrice()
         gasPrice = web3.utils.toHex(gasPrice)
 
+        // Get Gas Limit
         let gasLimit = web3.utils.toHex(config.smartContract.p2pPlatform.gasLimit)
 
         // Collateral
