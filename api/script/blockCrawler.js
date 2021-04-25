@@ -41,6 +41,7 @@ async function ETHBlockCrawler() {
                         // To capture our smart contract tx
                         // transactionObj["to"] == config.smartContractAddress.p2pPlatform
 
+                        // HINT (Session 4 - Write script to decode smart contract transaction data)
                         // Decode Transaction
                         // const abiDecoder = require('abi-decoder');
                         // var contractObj = await p2pPlatform()
