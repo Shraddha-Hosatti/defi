@@ -1,0 +1,28 @@
+<section>
+  <div class="container">
+    <form class="forms-sample" [formGroup]="voteForm" (ngSubmit)="voteFormSubmit(voteForm)">
+      <div class="row mt-5">
+        <div class="col-md-3">
+          <select class="btn-primary" (click)="toVote()" formControlName="name">
+            <option value="" [selected]=true [disabled]="true" hidden>Candidate Name</option>
+            <option *ngFor="let data of demoData" value={{data.id}}>{{data.name}}</option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <div class="form-group">
+            <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Voter ID"
+              formControlName="voterId">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <button type="submit" class="btn btn-primary" *ngIf="vote">Vote</button>
+
+          <p class="text-success mt-3" *ngIf="show">SUCCESSFUL</p>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</section>

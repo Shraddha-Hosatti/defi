@@ -114,6 +114,8 @@ https://www.getpostman.com/collections/bab6a07226f6791e2eda
 
 # Deploy on Ropsten Network
 
+*HINT (Session 2)* Deploy contract on ethereum ropsten network 
+
 1. Set your Infura Key and Mnemonic as below (Use your existing seed or create new and transfer some ether to it)
 2. Update "from" address in truffle-config.js which have funds
 
@@ -123,17 +125,42 @@ export MNEMONIC="asd asd ...."
 ```
 # Frontend
 
-Just a sample code for connecting to metamask and build a transaction
-### Go to frontend folder and Install dependencies
+Just a sample code for connecting to metamask and build a transaction.
+
+folder - frontend_demo/Voting
+
+### Install dependencies
 
 ```sh
-npm install
+sudo npm install
+node patch.js
 ```
+
+In case of some errors run below :
+
+```
+sudo npm rebuild node-sass 
+sudo npm install
+```
+
+### Deploy Contract on blockchain with metamask (using remix/truffle)
+
+file -> frontend_demo/voting.sol
+
+### Replace contract address in
+
+src/app/components/admin/admin.component.ts (Line 13)
+src/app/components/votes/votes.component.ts (Line 10)
+
 ### Start
 
 ```sh
-npm run start
+npm start
+ng serve --host 0.0.0.0
 ```
+
+admin - http://127.0.0.1:4200
+voter - http://127.0.0.1:4200/#/vote 
 
 # Services
 

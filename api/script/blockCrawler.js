@@ -37,6 +37,7 @@ async function ETHBlockCrawler() {
                         // Print Transaction
                         console.log(transactionObj)
 
+                        // HINT (Session 3 - Write script to capture blockchain transaction specific to your contract)
                         // To capture our smart contract tx
                         // transactionObj["to"] == config.smartContractAddress.p2pPlatform
 
