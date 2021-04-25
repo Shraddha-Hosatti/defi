@@ -123,44 +123,6 @@ https://www.getpostman.com/collections/bab6a07226f6791e2eda
 export INFURA_API_KEY="asdasd"
 export MNEMONIC="asd asd ...."
 ```
-# Frontend
-
-Just a sample code for connecting to metamask and build a transaction.
-
-folder - frontend_demo/Voting
-
-### Install dependencies
-
-```sh
-sudo npm install
-node patch.js
-```
-
-In case of some errors run below :
-
-```
-sudo npm rebuild node-sass 
-sudo npm install
-```
-
-### Deploy Contract on blockchain with metamask (using remix/truffle)
-
-file -> frontend_demo/voting.sol
-
-### Replace contract address in
-
-src/app/components/admin/admin.component.ts (Line 13)
-src/app/components/votes/votes.component.ts (Line 10)
-
-### Start
-
-```sh
-npm start
-ng serve --host 0.0.0.0
-```
-
-admin - http://127.0.0.1:4200
-voter - http://127.0.0.1:4200/#/vote 
 
 # Services
 
@@ -221,6 +183,47 @@ Change some code and run below
 ```
 oz upgrade
 ```
+
+
+# Frontend
+
+Just a sample code for connecting to metamask and build a transaction.
+
+folder - frontend_demo/Voting
+
+### Install dependencies
+
+```sh
+sudo npm install
+node patch.js
+```
+
+In case of some errors run below :
+
+```
+sudo npm rebuild node-sass 
+sudo npm install
+```
+
+### Deploy Contract on blockchain with metamask (using remix/truffle)
+
+file -> frontend_demo/voting.sol
+
+### Replace contract address in
+
+src/app/components/admin/admin.component.ts (Line 13)
+src/app/components/votes/votes.component.ts (Line 10)
+
+### Start
+
+```sh
+npm start
+ng serve --host 0.0.0.0
+```
+
+admin - http://127.0.0.1:4200
+voter - http://127.0.0.1:4200/#/vote 
+
 
 # Troubleshoot
 
