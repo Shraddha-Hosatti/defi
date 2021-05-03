@@ -1,0 +1,34 @@
+{
+  "name": "p2p-lending",
+  "version": "1.0.0",
+  "description": "This repository hosts a variety of smart contracts for a DAO (Decentralized Autonomous Organisation) focussing on delivering a decentralized p2p-lending platform on the Ethereum Blockchain. This may very well develop into something completely different based on the direction taken by the DAO in the future. We are as excited as you are! ;-)",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "truffle-hdwallet-provider": "^1.0.3",
+    "web3": "^1.0.0-beta.37"
+  },
+  "devDependencies": {
+    "ganache-cli": "^6.3.0",
+    "truffle": "^5.0.3"
+  },
+  "scripts": {
+    "compile": "truffle compile",
+    "test": "truffle test",
+    "migrate": "npm run migrate:ropsten",
+    "migrate:dev": "rm -rf build/ && truffle migrate --reset --compile-all --network development",
+    "migrate:ropsten": "truffle migrate --reset --network ropsten",
+    "deploy:app": "cd ./frontend && ./deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adorsys/p2p-lending.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adorsys/p2p-lending/issues"
+  },
+  "homepage": "https://github.com/adorsys/p2p-lending#readme"
+}

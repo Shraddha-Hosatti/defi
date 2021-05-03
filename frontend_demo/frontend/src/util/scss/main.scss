@@ -1,0 +1,90 @@
+@import 'variables';
+@import 'utilities';
+
+// reset general styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: $bg-body;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: $navbar-height;
+  width: 100%;
+  background-color: $bg-white;
+  box-shadow: 0 4px 20px 0 rgba(255, 255, 255, $alpha: 0.5);
+  z-index: 998;
+
+  &__left {
+    height: 53px;
+    width: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 2px;
+    top: 14px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: $primary-text-color;
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  &__right {
+    height: 53px;
+    width: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 14px;
+    font-size: 20px;
+    color: $primary-text-color;
+
+    &--firstItem {
+      right: 251px;
+    }
+
+    &--secondItem {
+      right: 33px;
+    }
+  }
+
+  &__active {
+    font-weight: 700;
+  }
+}
+
+.content {
+  position: relative;
+  top: 100px;
+  min-height: $content-height;
+
+  > .errorContent {
+    height: $content-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

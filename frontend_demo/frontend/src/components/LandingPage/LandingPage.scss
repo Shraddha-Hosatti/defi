@@ -1,0 +1,27 @@
+@import '../../util/scss/variables';
+
+.landingPage {
+  // display multiple cards as row
+  display: flex;
+
+  &__bulletpoints {
+    padding-top: 20px;
+    width: 300px;
+  }
+
+  &__bulletpoint {
+    margin-bottom: 14px;
+    padding-left: 30px;
+    background-image: url(../../assets/circle_checked.svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 18px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .landingPage {
+    flex-direction: column;
+  }
+}
