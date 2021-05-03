@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/adorsys/p2p-lending.svg?branch=master)](https://travis-ci.org/adorsys/p2p-lending)
-
 # P2P-Lending
 
 ## Table of Contents
