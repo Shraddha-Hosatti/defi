@@ -48,6 +48,13 @@ async function ETHBlockCrawler() {
                         // abiDecoder.addABI(contractObj.abi)
                         // var decodedData = abiDecoder.decodeMethod(transactionObj['input']);
 
+                        // HINT (Session 4 - Extract function names and input params from decoded transaction data)
+                        // console.log(decodedData)
+
+                        // HINT (Session 4 - Check if the above transaction has failed while executing smart contract function)
+                        // var txDataStatus = await web3.eth.getTransactionReceipt(transactionObj['hash'])
+                        // var success = txDataStatus["status"]
+
                     });
                 }
                 await iterateNewTransactions()
