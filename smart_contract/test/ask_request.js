@@ -1,4 +1,5 @@
 const RequestFactory = artifacts.require("RequestFactory");
+const Governance = artifacts.require("Governance");
 const P2PPlatform = artifacts.require("P2PPlatform");
 const P2PToken = artifacts.require("P2PToken");
 
@@ -8,7 +9,8 @@ contract("P2PPlatform", accounts => {
         _paybackAmount = 200;
         _purpose = "test";
         _requestFactory = await RequestFactory.new()
-        _p2pPlatform = await P2PPlatform.new(_requestFactory.address)
+        _governance = await Governance.new(1)
+        _p2pPlatform = await P2PPlatform.new(_requestFactory.address, _governance.address)
         _p2pToken = await P2PToken.new(10000000, "P2PToken", 0, "P2PT")
         _colletralTimeStamp = 123
         _colletral = 2000000000 // Make this 0 to fail test case
