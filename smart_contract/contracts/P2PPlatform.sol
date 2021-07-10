@@ -17,6 +17,10 @@ interface LendingRequestInterface {
     function getRequestState() external view returns(bool, bool, uint256, bool, uint256, uint256);
 }
 
+interface GovernanceInterface {
+    function getIsValid() external view returns(bool _isValid);
+}
+
 // *********************** Interfaces - Ends ************************* //
 
 // *********************** P2PLendingAndBorrowing - Starts ************************* //
@@ -36,10 +40,12 @@ contract P2PPlatform {
 
     // State Variables
     address private requestFactory;
+    address private governance;
     address[] private lendingRequests;
 
-    constructor(address _factory) {
+    constructor(address _factory, address _governance) {
         requestFactory = _factory;
+        governance = _governance;
     }
 
     /**
@@ -49,6 +55,10 @@ contract P2PPlatform {
      * @param _purpose the reason you want to borrow ether
      */
     function ask(uint256 _amount, uint256 _paybackAmount, string memory _purpose, address payable _token, uint256 _collateralCollectionTimeStamp) public payable returns(bool success){
+        
+        // Get if valid
+        bool isValid = GovernanceInterface(governance).getIsValid();
+        require(isValid, "Governance has stopped ask requests");
 
         // validate the input parameters
         require(_amount > 0, "Amount should be greater than 0");

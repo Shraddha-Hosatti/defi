@@ -50,6 +50,7 @@ Ganache -> Settings -> Server -> Port Number -> 8545
 ### Go to smart_contract folder and Install dependencies
 
 ```sh
+sudo npm install github:barrysteyn/node-scrypt#fb60a8d3c158fe115a624b5ffa7480f3a24b03fb
 npm install
 ```
 
@@ -109,6 +110,14 @@ npm run start
 
 https://www.getpostman.com/collections/bab6a07226f6791e2eda
 
+## Deploy the Smart contract
+
+1. P2PToken.sol
+2. RequestFactory.sol
+3. Governance.sol
+4. P2PPlatform.sol
+
+
 ## Understand the Smart contract
 
 1. Create Ask Request with collateral as ETH
@@ -119,6 +128,7 @@ https://www.getpostman.com/collections/bab6a07226f6791e2eda
 6. Payback from lender, Colletral will come back
 7. Collect Collateral if not paid before deadline
 8. Cancel Request before Lender pay
+9. Change is Valid from upVote from Governance Contract
 
 # Deploy on Ropsten Network
 
@@ -199,6 +209,7 @@ oz upgrade
 
 ```sh
 sudo npm install github:barrysteyn/node-scrypt#fb60a8d3c158fe115a624b5ffa7480f3a24b03fb
+sudo npm i web3
 ```
 ## Cannot read property 'addFunction' of undefined
 
