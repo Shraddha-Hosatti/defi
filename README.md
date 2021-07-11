@@ -134,7 +134,7 @@ https://www.getpostman.com/collections/bab6a07226f6791e2eda
 
 *HINT (Session 2)* Deploy contract on ethereum ropsten network 
 
-1. Set your Infura Key and Mnemonic as below (Use your existing seed or create new and transfer some ether to it)
+1. Set your Infura Key(https://infura.io/) and Mnemonic as below (Use your existing seed or create new and transfer some ether to it)
 2. Update "from" address in truffle-config.js which have funds
 
 ```sh
