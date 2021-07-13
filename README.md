@@ -225,3 +225,17 @@ sudo npm i web3
 ```sh
 sudo npm update truffle
 ```
+
+## Invalid Sender Error on Ropsten network in API
+
+https://github.com/ChainSafe/web3.js/issues/2915
+
+```sh
+sudo npm i ethereumjs-tx@1.3.7
+```
+
+Code Changes in signTransaction()
+
+```
+let tx = new Tx(rawTxObject); for Version 1.3.7
+```

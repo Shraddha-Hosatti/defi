@@ -17,8 +17,8 @@ config.server.port = 5001
 
 /******************** Blockchain *************************/
 config.blockchain = {}
-config.blockchain.url = "http://127.0.0.1:8545"
-config.blockchain.chainId = "5777"
+config.blockchain.url = "https://ropsten.infura.io/v3/" // Put key here
+config.blockchain.chainId = "3"
 /******************** Blockchain *************************/
 
 /******************** Smart Contract *************************/
