@@ -31,6 +31,7 @@ async function signTransaction(rawTxObject, privateKey) {
 
     // Sign Transaction
     let tx = new Tx.Transaction(rawTxObject)
+    // let tx = new Tx(rawTxObject); for Version 1.3.7
     tx.sign(Buffer.from(privateKey, 'hex'))
     let serializedTx = tx.serialize()
     var signedTx = "0x" + serializedTx.toString('hex')
