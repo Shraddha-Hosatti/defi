@@ -19,20 +19,22 @@ function MyLogger(category, logPath) {
 // Create Logger
 MyLogger.prototype.CreateLogger = function () {
 
-    var finalLogPath = this.logPath + new Date().toISOString().split('T')[0]
+    if (config.logs.fileLogs){
+        var finalLogPath = this.logPath + new Date().toISOString().split('T')[0]
 
-    this.logger = winston.createLogger({
-        level: 'info',
-        format: combine(
-            timestamp(),
-            splat(),
-            myFormat
-        ),
-        defaultMeta: "",
-        transports: [
-            new winston.transports.File({ filename: finalLogPath })
-        ]
-    });
+        this.logger = winston.createLogger({
+            level: 'info',
+            format: combine(
+                timestamp(),
+                splat(),
+                myFormat
+            ),
+            defaultMeta: "",
+            transports: [
+                new winston.transports.File({ filename: finalLogPath })
+            ]
+        });
+    }
 
 }
 

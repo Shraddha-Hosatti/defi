@@ -81,7 +81,9 @@ truffle create test AskRequest
 npm run test
 ```
 
-### Update Smart Contract address in config (get this from the ganache gui or console output)
+## Backend
+
+### Update Smart Contract address in config/development.js (get this from the ganache gui or console output)
 
 config.smartContractAddress.p2pToken
 
@@ -90,7 +92,7 @@ config.smartContractAddress.p2pPlatform
 ### Go to api folder and Install dependencies
 
 ```sh
-npm install
+sudo npm install
 ```
 
 ### Create Log folder
@@ -106,11 +108,18 @@ sudo chmod 777 -R /var/log/defi
 npm run start
 ```
 
-### API Document
+### Point to Testnets
+
+Change below configuration in config/development.js
+
+config.blockchain.url = {INFURA_URL}
+config.blockchain.chainId = {CHAIN_ID} (Ropsten - 3) 
+
+## API Document
 
 https://www.getpostman.com/collections/bab6a07226f6791e2eda
 
-## Deploy the Smart contract
+## Deploying the Smart contract (Manually)
 
 1. P2PToken.sol
 2. RequestFactory.sol
