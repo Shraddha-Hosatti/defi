@@ -172,7 +172,7 @@ npm install -g @openzeppelin/cli
 oz --version
 ```
 
-## Initialize Openzeppelin Env (one time only)
+## ## (Optional) Initialize Openzeppelin Env (one time only)
 
 This is already done in project. However if you want to do it from scratch run below commands :
 

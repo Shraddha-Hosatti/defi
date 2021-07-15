@@ -13,7 +13,7 @@ contract UpgradableSmartContract is Initializable {
     }
 
     function setValue(uint256 x) public returns (bool) {
-        value = x + 1000;
+        value = x + 2000;
         return true;
     }
 
