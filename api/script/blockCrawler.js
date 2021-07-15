@@ -4,7 +4,6 @@ const config = require("../config/config")
 const util = require("../tools/util")
 const Web3 = require("web3")
 const web3 = new Web3(new Web3.providers.HttpProvider(config.blockchain.url))
-const p2pPlatform = require("../blockchain/smartContract/P2PPlatform").p2pPlatform
 
 // Global (Must be saved in DB - Mongo or Redis)
 var crawledBlocks = 0
@@ -40,20 +39,6 @@ async function ETHBlockCrawler() {
                         // HINT (Session 3 - Write script to capture blockchain transaction specific to your contract)
                         // To capture our smart contract tx
                         // transactionObj["to"] == config.smartContractAddress.p2pPlatform
-
-                        // HINT (Session 4 - Write script to decode smart contract transaction data)
-                        // Decode Transaction
-                        // const abiDecoder = require('abi-decoder');
-                        // var contractObj = await p2pPlatform()
-                        // abiDecoder.addABI(contractObj.abi)
-                        // var decodedData = abiDecoder.decodeMethod(transactionObj['input']);
-
-                        // HINT (Session 4 - Extract function names and input params from decoded transaction data)
-                        // console.log(decodedData)
-
-                        // HINT (Session 4 - Check if the above transaction has failed while executing smart contract function)
-                        // var txDataStatus = await web3.eth.getTransactionReceipt(transactionObj['hash'])
-                        // var success = txDataStatus["status"]
 
                     });
                 }

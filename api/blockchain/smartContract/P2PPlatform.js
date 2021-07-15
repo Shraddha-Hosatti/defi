@@ -331,5 +331,6 @@ module.exports = {
     getColletralBalance,
     lend,
     payback,
-    collect
+    collect,
+    p2pPlatform
 }

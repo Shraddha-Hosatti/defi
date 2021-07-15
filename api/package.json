@@ -4,6 +4,7 @@
   "description": "Prequisites ``` sudo apt install build-essential ```",
   "main": "index.js",
   "dependencies": {
+    "abi-decoder": "^2.4.0",
     "bignumber.js": "9.0.0",
     "cors": "2.8.5",
     "crypto": "1.0.1",
