@@ -168,3 +168,20 @@ These are the requisites you need, in order to use the software and instructions
    ```sh
    localhost:8080
    ```
+
+
+# Troubleshoot
+
+## Failed at the scrypt@6.0.3 install script.
+
+```sh
+sudo npm install github:barrysteyn/node-scrypt#fb60a8d3c158fe115a624b5ffa7480f3a24b03fb
+OR
+sudo npm i web3
+```
+
+## Node Sass does not yet support your current environment: Linux 64-bit with Unsupported runtime (83)
+
+```
+sudo npm rebuild node-sass
+```

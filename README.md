@@ -50,7 +50,6 @@ Ganache -> Settings -> Server -> Port Number -> 8545
 ### Go to smart_contract folder and Install dependencies
 
 ```sh
-sudo npm install github:barrysteyn/node-scrypt#fb60a8d3c158fe115a624b5ffa7480f3a24b03fb
 npm install
 ```
 
@@ -218,6 +217,7 @@ oz upgrade
 
 ```sh
 sudo npm install github:barrysteyn/node-scrypt#fb60a8d3c158fe115a624b5ffa7480f3a24b03fb
+OR
 sudo npm i web3
 ```
 ## Cannot read property 'addFunction' of undefined
