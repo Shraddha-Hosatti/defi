@@ -210,6 +210,18 @@ Change some code and run below
 oz upgrade
 ```
 
+# Understand the Defi app architecture
+
+1. Smart contract creation
+2. Smart contract deployment (truffle)
+3. Get the JSON builds (ABI files)
+4. Create your blockchain connection (web3)
+5. Create your smart contract object (contractObj -> ABI and Smart Contract Address)
+6. Interact with the contract
+	1. Read : .call() 
+	2. Write : RawTransaction(APP work -> FE/BE) -> SignedTransaction(Wallet like metamask) -> Broadcast(Wallet like metamask)
+
+
 
 # Troubleshoot
 
