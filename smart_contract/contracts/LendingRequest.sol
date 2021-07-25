@@ -99,7 +99,7 @@ contract LendingRequest {
         require(balance >= paybackAmount, "Insufficient Balance");
 
         // Transfer token
-        require(ERC20Interface(token).transferFrom(_origin, lender, balance), "Transfer Failed");
+        require(ERC20Interface(token).transferFrom(_origin, lender, paybackAmount), "Transfer Failed");
 
         // Remove collateral
         _origin.transfer(address(this).balance);
